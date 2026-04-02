@@ -1389,20 +1389,29 @@
       .hero-visual {
         height: 85vh;
         background: var(--navy);
+        overflow: hidden;
+        position: relative;
       }
 
       .hero-scroll-container {
-        width: 120%;
-        right: -10%;
+        width: 100%;
+        left: 0;
         top: -5%;
         height: 110%;
-        transform: rotate(6deg);
-        opacity: 0.55;
+        transform: rotate(3deg) scale(1.1);
+        opacity: 0.6;
+        display: flex;
+        gap: 0.6rem;
       }
 
       .hero-scroll-col {
         gap: 0.8rem;
-        animation-duration: 25s;
+        animation-duration: 35s; /* Slower for more premium feel */
+      }
+
+      .hero-scroll-item {
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       }
 
       .hero-visual::after {
