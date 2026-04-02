@@ -11,6 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet">
+  <link rel="icon" href="./assets/unnamed__1_-removebg-preview.png" type="image/png">
   <style>
     :root {
       --navy: #0f1f38;
@@ -137,7 +138,7 @@
       min-height: 650px;
       background: var(--navy);
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr 1.5fr;
       align-items: center;
       padding-top: 70px;
       position: relative;
@@ -424,9 +425,9 @@
 
     .cat-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1200px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
@@ -434,6 +435,8 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      text-decoration: none;
+      display: block;
     }
 
     .cat-img {
@@ -451,7 +454,7 @@
     .cat-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15, 31, 56, 0.85) 0%, rgba(15, 31, 56, 0.1) 60%);
+      background: linear-gradient(to top, rgba(15, 31, 56, 0.9) 0%, rgba(15, 31, 56, 0.2) 60%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -460,7 +463,7 @@
     }
 
     .cat-card:hover .cat-overlay {
-      background: linear-gradient(to top, rgba(15, 31, 56, 0.92) 0%, rgba(15, 31, 56, 0.3) 60%);
+      background: linear-gradient(to top, rgba(15, 31, 56, 0.95) 0%, rgba(15, 31, 56, 0.4) 60%);
     }
 
     .cat-tag {
@@ -480,21 +483,20 @@
     }
 
     .cat-desc {
-      color: rgba(255, 255, 255, 0.65);
+      color: rgba(255, 255, 255, 0.75);
       font-size: 0.82rem;
       margin-top: 0.4rem;
-      opacity: 0;
-      transform: translateY(8px);
+      opacity: 1;
+      transform: none;
       transition: all 0.3s;
     }
 
     .cat-card:hover .cat-desc {
-      opacity: 1;
-      transform: none;
+      color: white;
     }
 
     .cat-link {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 0.4rem;
       color: var(--gold);
@@ -503,14 +505,13 @@
       text-transform: uppercase;
       margin-top: 1rem;
       text-decoration: none;
-      opacity: 0;
-      transform: translateY(8px);
+      opacity: 1;
+      transform: none;
       transition: all 0.3s 0.05s;
     }
 
     .cat-card:hover .cat-link {
-      opacity: 1;
-      transform: none;
+      color: var(--gold-light);
     }
 
     /* ── LEATHER AUTHORITY ── */
@@ -615,84 +616,7 @@
       font-weight: 500;
     }
 
-    /* ── CATEGORIES FILTER (types) ── */
-    #browse {
-      background: var(--white);
-      text-align: center;
-    }
 
-    .filter-tabs {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 2rem 0 3rem;
-    }
-
-    .filter-tab {
-      padding: 0.5rem 1.3rem;
-      border: 1px solid #ddd;
-      background: none;
-      cursor: pointer;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate);
-      font-family: 'DM Sans', sans-serif;
-      transition: all 0.2s;
-    }
-
-    .filter-tab.active,
-    .filter-tab:hover {
-      background: var(--navy);
-      color: white;
-      border-color: var(--navy);
-    }
-
-    .types-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 1rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .type-card {
-      background: var(--cream);
-      padding: 1.5rem 0.5rem;
-      text-align: center;
-      transition: all 0.3s;
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-
-    .type-card:hover {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-
-    .type-card:hover .type-name {
-      color: var(--gold);
-    }
-
-    .type-card:hover .type-icon {
-      filter: brightness(10);
-    }
-
-    .type-icon {
-      font-size: 2rem;
-      margin-bottom: 0.6rem;
-      display: block;
-    }
-
-    .type-name {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate);
-      font-weight: 500;
-      transition: color 0.3s;
-    }
 
     /* ── WHY MASEE'S ── */
     #why {
@@ -1180,16 +1104,270 @@
     }
 
     @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); }
+      50% { box-shadow: 0 4px 28px rgba(37, 211, 102, 0.7); }
+    }
 
-      0%,
-      100% {
-        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      padding: 100px 0;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    #testimonials .section-label,
+    #testimonials .section-title {
+      padding-left: 5%;
+    }
+
+    .testi-container {
+      width: 100%;
+      overflow: hidden;
+      padding: 3rem 0;
+      position: relative;
+    }
+
+    .testi-track {
+      display: flex;
+      gap: 2rem;
+      width: max-content;
+      animation: autoScrollTesti 80s linear infinite;
+    }
+
+    .testi-track:hover {
+      animation-play-state: paused;
+    }
+
+    .testi-card {
+      width: 400px;
+      flex-shrink: 0;
+      background: var(--white);
+      padding: 2.5rem;
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .testi-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(15, 31, 56, 0.1);
+    }
+
+    .google-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      color: var(--slate-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+    }
+
+    .testi-stars {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .testi-text {
+      color: var(--slate);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .testi-avatar {
+      width: 48px;
+      height: 48px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .testi-name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy);
+    }
+
+    .testi-loc {
+      font-size: 0.8rem;
+      color: var(--slate-light);
+      margin-top: 3px;
+    }
+
+    @keyframes autoScrollTesti {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-400px * 8 - 2rem * 8)); }
+    }
+
+    @media (max-width: 900px) {
+      #testimonials {
+        padding: 60px 0;
       }
-
-      50% {
-        box-shadow: 0 4px 28px rgba(37, 211, 102, 0.7);
+      .testi-card {
+        width: 300px;
+        padding: 2rem;
+      }
+      @keyframes autoScrollTesti {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-300px * 8 - 2rem * 8)); }
       }
     }
+
+    /* ── ABOUT SECTION ── */
+    #about {
+      padding: 60px 8%;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .about-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--slate);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .h-icon {
+      font-size: 1.5rem;
+    }
+
+    .h-content strong {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--navy);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+
+    .h-content span {
+      font-size: 0.85rem;
+      color: var(--slate-light);
+    }
+
+    .about-visual {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 20px 20px 0 var(--cream);
+    }
+
+    .about-visual img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .about-container:hover .about-visual img {
+      transform: scale(1.05);
+    }
+
+    /* About Contact Card */
+    .about-contact {
+      margin-top: 3.5rem;
+      padding: 2rem;
+      background: var(--navy);
+      border-radius: 4px;
+      color: var(--white);
+    }
+
+    .ac-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+      padding-bottom: 0.8rem;
+    }
+
+    .ac-details p {
+      font-size: 0.9rem !important;
+      margin-bottom: 0.6rem !important;
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .ac-details p strong {
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .ac-social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.8rem;
+    }
+
+    .ac-social a {
+      color: var(--gold);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .ac-social a:hover {
+      color: var(--gold-light);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 900px) {
+      #about {
+        padding: 60px 5%;
+      }
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .about-visual {
+        box-shadow: 12px 12px 0 var(--cream);
+      }
+      .about-visual img {
+        height: 400px;
+      }
+      .about-highlights {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
 
     /* ── MOBILE ── */
     @media (max-width: 900px) {
@@ -1204,8 +1382,7 @@
       }
 
       .hero-visual {
-        height: 50vw;
-        min-height: 300px;
+        height: 70vh;
       }
 
       .hero-visual::after {
@@ -1340,10 +1517,9 @@
       <img src="./assets/unnamed__1_-removebg-preview.png" alt="Masee's Footwear" style="height: 40px; width: auto; object-fit: contain; vertical-align: middle;">
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#categories">Men</a></li>
-      <li><a href="#categories">Women</a></li>
-      <li><a href="#categories">Kids</a></li>
-      <li><a href="#browse">Collections</a></li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Collection</a></li>
       <li><a href="#authority">Our Story</a></li>
       <li><a href="#stores" class="nav-cta">Get Directions</a></li>
     </ul>
@@ -1371,74 +1547,65 @@
 
       <div class="hero-scroll-container">
         <div class="hero-scroll-col">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2021-04-30.jpg"
-            alt="Men's Collection">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-10 (1).jpg"
-            alt="Women's Collection">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-10.jpg"
-            alt="Kids' Collection">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-15 (1).jpg"
-            alt="Ambur Leather">
+          <img class="hero-scroll-item" src="./assets/Hero-section/BANNER%201.png" alt="Masee's Banner">
+          <img class="hero-scroll-item" src="./assets/Hero-section/BANNER%204.png" alt="Masee's Banner">
+          <img class="hero-scroll-item" src="./assets/Hero-section/Masees%20New%20Logo%20High%20resolution%20pic.png" alt="Masee's Logo">
+          <img class="hero-scroll-item" src="./assets/Hero-section/1.png" alt="Men's Collection">
+          <img class="hero-scroll-item" src="./assets/Hero-section/2.png" alt="Women's Collection">
+          <img class="hero-scroll-item" src="./assets/Hero-section/5.jpeg" alt="Kids' Collection">
+          <img class="hero-scroll-item" src="./assets/Hero-section/7.jpeg" alt="Ambur Leather">
+          
           <!-- Duplicated for seamless loop -->
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2021-04-30.jpg"
-            alt="Men's Collection">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-10 (1).jpg"
-            alt="Women's Collection">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-10.jpg"
-            alt="Kids' Collection">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-15 (1).jpg"
-            alt="Ambur Leather">
+          <img class="hero-scroll-item" src="./assets/Hero-section/BANNER%201.png" alt="Masee's Banner">
+          <img class="hero-scroll-item" src="./assets/Hero-section/BANNER%204.png" alt="Masee's Banner">
+          <img class="hero-scroll-item" src="./assets/Hero-section/Masees%20New%20Logo%20High%20resolution%20pic.png" alt="Masee's Logo">
+          <img class="hero-scroll-item" src="./assets/Hero-section/1.png" alt="Men's Collection">
+          <img class="hero-scroll-item" src="./assets/Hero-section/2.png" alt="Women's Collection">
+          <img class="hero-scroll-item" src="./assets/Hero-section/5.jpeg" alt="Kids' Collection">
+          <img class="hero-scroll-item" src="./assets/Hero-section/7.jpeg" alt="Ambur Leather">
         </div>
         <div class="hero-scroll-col reverse">
           <img class="hero-scroll-item"
-            src="./assets/Hero-section/unnamed (1).jpg" alt="Sneakers">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/unnamed.jpg"
-            alt="Sports Shoes">
+            src="./assets/Hero-section/9.jpeg" alt="Sneakers">
           <img class="hero-scroll-item"
             src="./assets/Hero-section/2021-04-30.jpg"
+            alt="Sports Shoes">
+          <img class="hero-scroll-item"
+            src="./assets/Hero-section/2024-08-15 (1).jpg"
             alt="Formal Shoes">
           <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-10.jpg"
+            src="./assets/Hero-section/unnamed.jpg"
             alt="Casual Shoes">
           <!-- Set 2 -->
           <img class="hero-scroll-item"
-            src="./assets/Hero-section/unnamed (1).jpg" alt="Sneakers">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/unnamed.jpg"
-            alt="Sports Shoes">
+            src="./assets/Hero-section/9.jpeg" alt="Sneakers">
           <img class="hero-scroll-item"
             src="./assets/Hero-section/2021-04-30.jpg"
+            alt="Sports Shoes">
+          <img class="hero-scroll-item"
+            src="./assets/Hero-section/2024-08-15 (1).jpg"
             alt="Formal Shoes">
           <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-10.jpg"
+            src="./assets/Hero-section/unnamed.jpg"
             alt="Casual Shoes">
           <!-- Set 3 -->
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/unnamed (1).jpg" alt="Sneakers">
-          <img class="hero-scroll-item"
-            src="./assets/Hero-section/unnamed.jpg"
-            alt="Sports Shoes">
+           <img class="hero-scroll-item"
+            src="./assets/Hero-section/9.jpeg" alt="Sneakers">
           <img class="hero-scroll-item"
             src="./assets/Hero-section/2021-04-30.jpg"
+            alt="Sports Shoes">
+          <img class="hero-scroll-item"
+            src="./assets/Hero-section/2024-08-15 (1).jpg"
             alt="Formal Shoes">
           <img class="hero-scroll-item"
-            src="./assets/Hero-section/2024-08-10.jpg"
+            src="./assets/Hero-section/unnamed.jpg"
             alt="Casual Shoes">
         </div>
       </div>
 
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-num">15+</div>
+          <div class="stat-num">10+</div>
           <div class="stat-label">Years in Ambur</div>
         </div>
         <div class="stat">
@@ -1446,7 +1613,7 @@
           <div class="stat-label">Styles</div>
         </div>
         <div class="stat">
-          <div class="stat-num">4.8★</div>
+          <div class="stat-num">4.4★</div>
           <div class="stat-label">Google Rating</div>
         </div>
       </div>
@@ -1473,6 +1640,67 @@
     </div>
   </section>
 
+  <!-- ABOUT US -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <div class="section-label">A Heritage of Quality</div>
+        <h2 class="section-title">About <em>Masee's</em></h2>
+        <p>Masee’s A Fashion Footwear & Accessories shop located in Ambur - The Leather city of India.</p>
+        <p>The Leather products made here are rooted with European designs and crafted using high quality leather. Making use of this availability, Masee’s gives its customer’s unique, differentiated and exclusive international brands at affordable and concession prices.</p>
+        <p>Masee’s is more than just the sum of its products – it’s a shopping experience that promises to surprise, amaze and amuse its customers by delivering extraordinary customer experience.</p>
+        <p>With wide verities of brands offering all kinds of shoes, Right from formal lace up, easy slip - on, boots, Brogues, sneakers, loafers, flip flops, sandals and fabulous range of bags and accessories. There is always something special for every occasion in store.</p>
+        <p>Here we provide a platform for our customers to buy our complete range of products online right from their place. We door deliver our products within India.</p>
+        
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="h-icon">🚚</div>
+            <div class="h-content">
+              <strong>FREE SHIPPING PAN-INDIA ON ALL ORDERS</strong>
+              <span>Fast & reliable delivery to your door</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="h-icon">🔄</div>
+            <div class="h-content">
+              <strong>HASSLE-FREE REVERSE PICKUP</strong>
+              <span>From your doorstep on all returns</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual-group">
+        <div class="about-visual">
+          <img src="./assets/about_us.png" alt="Masee's Boutique" loading="lazy">
+        </div>
+        <div class="about-contact">
+          <div class="ac-title">Connect With Us</div>
+          <div class="ac-details">
+            <p><strong>M Masee's Footwear & Accessories</strong></p>
+            <p>19, Nethaji Road, Ambur - 635 802.</p>
+            <p>📞 +91 95002 48077</p>
+            <p>✉️ masees.info@gmail.com</p>
+            <p>🕒 10am to 10pm (Friday: 2pm to 10pm)</p>
+          </div>
+          <div class="ac-social">
+            <a href="https://www.facebook.com/masees.shop" target="_blank" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/masees.insta/" target="_blank" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069v-2.162zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/919500248077" target="_blank" aria-label="WhatsApp">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.473-1.761-1.646-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a href="mailto:masees.info@gmail.com" target="_blank" aria-label="Email">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CATEGORIES -->
   <section id="categories">
     <div class="cat-header">
@@ -1480,37 +1708,87 @@
       <h2 class="section-title">A Pair for <em>Every Step</em></h2>
     </div>
     <div class="cat-grid">
-      <div class="cat-card">
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Men's%20collections%20(Formal%2C%20Casuals%2C%20Loafers%2C%20Boots)" target="_blank" class="cat-card">
         <img class="cat-img"
           src="./assets/mens_category.png"
           alt="Men's Footwear">
         <div class="cat-overlay">
           <div class="cat-tag">Bestsellers</div>
           <div class="cat-name">Men</div>
-          <div class="cat-desc">Oxfords, Loafers, Derby, Boots & Sneakers</div>
-          <a href="#browse" class="cat-link">View Collection →</a>
+          <div class="cat-desc">Formal, Casuals, Loafers, Boots</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
         </div>
-      </div>
-      <div class="cat-card">
+      </a>
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Women's%20collections%20(Loafers%2C%20Slippers%2C%20Boots)" target="_blank" class="cat-card">
         <img class="cat-img" src="./assets/womens_category.png"
           alt="Women's Footwear">
         <div class="cat-overlay">
           <div class="cat-tag">New Arrivals</div>
           <div class="cat-name">Women</div>
-          <div class="cat-desc">Heels, Flats, Sandals & Casual</div>
-          <a href="#browse" class="cat-link">View Collection →</a>
+          <div class="cat-desc">Loafers, Slippers, Boots</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
         </div>
-      </div>
-      <div class="cat-card">
+      </a>
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Kids'%20collections%20(Shoes%2C%20Sandals)" target="_blank" class="cat-card">
         <img class="cat-img" src="./assets/kids_category.png"
           alt="Kids' Footwear">
         <div class="cat-overlay">
           <div class="cat-tag">Fun & Durable</div>
           <div class="cat-name">Kids</div>
-          <div class="cat-desc">School Shoes, Sandals & Sports</div>
-          <a href="#browse" class="cat-link">View Collection →</a>
+          <div class="cat-desc">Shoes, Sandals</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
         </div>
-      </div>
+      </a>
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Men's%20Apparel%20(Formal%20Shirts%2C%20Casual%20shirts%2C%20T-shirt%2C%20Chinos%2C%20Denim)" target="_blank" class="cat-card">
+        <img class="cat-img" src="./assets/mens_apparel_category.png"
+          alt="Men's Apparel">
+        <div class="cat-overlay">
+          <div class="cat-tag">New Season</div>
+          <div class="cat-name">Men's Apparel</div>
+          <div class="cat-desc">Formal Shirts, Casual shirts, T-shirt, Chinos, Denim</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+        </div>
+      </a>
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Kids%20Apparel%20(Boys%20%26%20Girls%20T-shirt)" target="_blank" class="cat-card">
+        <img class="cat-img" src="./assets/kids_apparel_category.png"
+          alt="Kids Apparel">
+        <div class="cat-overlay">
+          <div class="cat-tag">Comfy Styles</div>
+          <div class="cat-name">Kids Apparel</div>
+          <div class="cat-desc">Boys & Girls T-shirt</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+        </div>
+      </a>
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Belts%20(Men's%20%26%20women's%20Belt)" target="_blank" class="cat-card">
+        <img class="cat-img" src="./assets/belts_category.png"
+          alt="Belts">
+        <div class="cat-overlay">
+          <div class="cat-tag">Essentials</div>
+          <div class="cat-name">Belts</div>
+          <div class="cat-desc">Men's & women's Belt</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+        </div>
+      </a>
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Women's%20Bags%20(Handbags%2C%20Sling%20bag%2C%20wallets)" target="_blank" class="cat-card">
+        <img class="cat-img" src="./assets/womens_bags_category.png"
+          alt="Women's Bags">
+        <div class="cat-overlay">
+          <div class="cat-tag">Elegant</div>
+          <div class="cat-name">Women's Bags</div>
+          <div class="cat-desc">Handbags, Sling bag, wallets</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+        </div>
+      </a>
+      <a href="https://wa.me/919500248077?text=Hello%20Mr.Masee%2C%20I'm%20looking%20for%20Leather%20Goods%20(Laptop%20bag%2C%20Duffle%20bag%2C%20Messenger%20Bag%2C%20Sling%20bag%2C%20Backpack)" target="_blank" class="cat-card">
+        <img class="cat-img" src="./assets/leather_goods_category.png"
+          alt="Leather Goods">
+        <div class="cat-overlay">
+          <div class="cat-tag">Premium</div>
+          <div class="cat-name">Leather Goods</div>
+          <div class="cat-desc">Laptop bag, Duffle bag, Messenger Bag, Sling bag, Backpack</div>
+          <div class="cat-link">Click here for collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -1557,50 +1835,15 @@
         Our Store</a>
     </div>
     <div class="authority-img">
-      <img class="auth-img-main"
-        src="./assets/2024-08-10.jpg"
-        alt="Ambur leather craftsmanship">
+      <img class="auth-img-main" src="./assets/WhatsApp%20Image%202026-04-02%20at%205.51.32%20PM.jpeg" alt="Masee's Footwear Store">
       <div class="auth-img-badge">
-        <div class="big-num">15+</div>
+        <div class="big-num">10+</div>
         <div class="small-txt">Years of Trust in Ambur</div>
       </div>
     </div>
   </section>
 
-  <!-- BROWSE BY TYPE -->
-  <section id="browse">
-    <div class="section-label">Explore Styles</div>
-    <h2 class="section-title">Browse by <em>Occasion</em></h2>
-    <div class="filter-tabs">
-      <button class="filter-tab active">All</button>
-      <button class="filter-tab">Men</button>
-      <button class="filter-tab">Women</button>
-      <button class="filter-tab">Kids</button>
-    </div>
-    <div class="types-grid">
-      <div class="type-card"><span class="type-icon">👞</span>
-        <div class="type-name">Formal</div>
-      </div>
-      <div class="type-card"><span class="type-icon">👟</span>
-        <div class="type-name">Sneakers</div>
-      </div>
-      <div class="type-card"><span class="type-icon">🥾</span>
-        <div class="type-name">Boots</div>
-      </div>
-      <div class="type-card"><span class="type-icon">👡</span>
-        <div class="type-name">Heels</div>
-      </div>
-      <div class="type-card"><span class="type-icon">🩴</span>
-        <div class="type-name">Sandals</div>
-      </div>
-      <div class="type-card"><span class="type-icon">🏃</span>
-        <div class="type-name">Sports</div>
-      </div>
-    </div>
-    <p
-      style="text-align:center; color: var(--slate-light); font-size: 0.82rem; margin-top: 2.5rem; letter-spacing: 0.06em;">
-      Visit our store to explore the full range · New arrivals every season</p>
-  </section>
+
 
   <!-- WHY MASEE'S -->
   <section id="why">
@@ -1636,44 +1879,162 @@
   <section id="testimonials">
     <div class="section-label">Customer Reviews</div>
     <h2 class="section-title">What Ambur <em>Says About Us</em></h2>
-    <div class="testimonials-grid">
-      <div class="testi-card">
-        <div class="google-badge">Google Review</div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Best shoe store in Ambur, hands down. The leather quality is excellent and the staff
-          helped me find the right size without any pressure. Been coming here for 3 years."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">R</div>
-          <div>
-            <div class="testi-name">Riyaz Ahmed</div>
-            <div class="testi-loc">Ambur, Tamil Nadu</div>
+    
+    <div class="testi-container">
+      <div class="testi-track">
+        <!-- Review 1: Riyaz -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Best shoe store in Ambur, hands down. The leather quality is excellent and the staff helped me find the right size without any pressure. Been coming here for 3 years."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Riyaz Ahmed</div>
+              <div class="testi-loc">Ambur, TN</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="google-badge">Google Review</div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Bought formal shoes for my son's wedding. Incredible quality for the price. The leather
-          feels premium and the stitching is very clean. Highly recommend."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">F</div>
-          <div>
-            <div class="testi-name">Farida Begum</div>
-            <div class="testi-loc">Vellore, Tamil Nadu</div>
+        <!-- Review 2: Farida -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Bought formal shoes for my son's wedding. Incredible quality for the price. The leather feels premium and the stitching is very clean. Highly recommend."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">F</div>
+            <div>
+              <div class="testi-name">Farida Begum</div>
+              <div class="testi-loc">Vellore, TN</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="google-badge">Google Review</div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Genuine Ambur leather at a great price. My sandals are 2 years old and still going
-          strong. Nothing else compares when it comes to local footwear."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">K</div>
-          <div>
-            <div class="testi-name">Karthik S.</div>
-            <div class="testi-loc">Ambur, Tamil Nadu</div>
+        <!-- Review 3: Karthik -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Genuine Ambur leather at a great price. My sandals are 2 years old and still going strong. Nothing else compares when it comes to local footwear."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">K</div>
+            <div>
+              <div class="testi-name">Karthik S.</div>
+              <div class="testi-loc">Ambur, TN</div>
+            </div>
           </div>
+        </div>
+        <!-- Review 4: Bendangakum -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Recently Ordered a MOAB 3 Tactical Outdoor shoe. Shipped the same day. Good Packaging, Product as advertised, excellent quality. Definitely ordering again."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">B</div>
+            <div>
+              <div class="testi-name">Bendangakum Jamir</div>
+              <div class="testi-loc">Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 5: DITHI -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Wide range of leather goods, with so many international brands at great price. Truly the leather city's pride store."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">D</div>
+            <div>
+              <div class="testi-name">DITHI Phonics</div>
+              <div class="testi-loc">Google Guide</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 6: Manu -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Had the opportunity to stop by at Masees…. The staff is very welcoming and had a great experience buying some stuff from here. Truly a hidden Gem!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">Manu Thomas</div>
+              <div class="testi-loc">Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 7: Geetha -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Unique products and nice collections. One of the best places in Ambur for genuine leather accessories and shoes."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">G</div>
+            <div>
+              <div class="testi-name">Geetha Rajesh</div>
+              <div class="testi-loc">Ambur, TN</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 8: mithu -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Good quality and amazing collections. The prices are very competitive for the high standard of products they sell."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">mithu shankar</div>
+              <div class="testi-loc">Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DUPLICATES FOR LOOP -->
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Best shoe store in Ambur, hands down. The leather quality is excellent and the staff helped me find the right size without any pressure."</p>
+          <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Riyaz Ahmed</div><div class="testi-loc">Ambur, TN</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Bought formal shoes for my son's wedding. Incredible quality for the price. The leather feels premium and the stitching is very clean."</p>
+          <div class="testi-author"><div class="testi-avatar">F</div><div><div class="testi-name">Farida Begum</div><div class="testi-loc">Vellore, TN</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Genuine Ambur leather at a great price. My sandals are 2 years old and still going strong. Nothing else compares."</p>
+          <div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Karthik S.</div><div class="testi-loc">Ambur, TN</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Recently Ordered a MOAB 3 Tactical Outdoor shoe. Shipped the same day. Good Packaging, Product as advertised."</p>
+          <div class="testi-author"><div class="testi-avatar">B</div><div><div class="testi-name">Bendangakum Jamir</div><div class="testi-loc">Verified Buyer</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Wide range of leather goods, with so many international brands at great price. Truly a hidden Gem!"</p>
+          <div class="testi-author"><div class="testi-avatar">D</div><div><div class="testi-name">DITHI Phonics</div><div class="testi-loc">Google Guide</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Had the opportunity to stop by at Maseeses. The staff is very welcoming and had a great experience."</p>
+          <div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Manu Thomas</div><div class="testi-loc">Verified Buyer</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Unique products and nice collections. One of the best places in Ambur for genuine leather."</p>
+          <div class="testi-author"><div class="testi-avatar">G</div><div><div class="testi-name">Geetha Rajesh</div><div class="testi-loc">Ambur, TN</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="google-badge">Google Review</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Good quality and amazing collections. The prices are very competitive for the high standard."</p>
+          <div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">mithu shankar</div><div class="testi-loc">Verified Buyer</div></div></div>
         </div>
       </div>
     </div>
@@ -1681,47 +2042,47 @@
 
   <!-- INSTAGRAM FEED -->
   <section id="instagram-feed">
-    <h2>Follow us on Instagram @masees.amburshoes</h2>
+    <h2>Follow us on Instagram @masees.insta</h2>
     <div class="insta-gallery-wrapper">
       <div class="insta-nav insta-prev">‹</div>
       <div class="insta-gallery" id="instaGallery">
         <div class="insta-item">
-          <a href="https://www.instagram.com/masees.amburshoes" target="_blank" aria-label="View Instagram Post">
+          <a href="https://www.instagram.com/masees.insta/" target="_blank" aria-label="View Instagram Post">
             <img class="insta-img"
               src="./assets/Hero-section/2021-04-30.jpg"
               alt="Masee's Footwear Instagram">
           </a>
         </div>
         <div class="insta-item">
-          <a href="https://www.instagram.com/masees.amburshoes" target="_blank" aria-label="View Instagram Post">
+          <a href="https://www.instagram.com/masees.insta/" target="_blank" aria-label="View Instagram Post">
             <img class="insta-img"
               src="./assets/Hero-section/unnamed.jpg"
               alt="Masee's Footwear Instagram">
           </a>
         </div>
         <div class="insta-item">
-          <a href="https://www.instagram.com/masees.amburshoes" target="_blank" aria-label="View Instagram Post">
+          <a href="https://www.instagram.com/masees.insta/" target="_blank" aria-label="View Instagram Post">
             <img class="insta-img"
               src="./assets/Hero-section/2024-08-10.jpg" 
               alt="Masee's Footwear Instagram">
           </a>
         </div>
         <div class="insta-item">
-          <a href="https://www.instagram.com/masees.amburshoes" target="_blank" aria-label="View Instagram Post">
+          <a href="https://www.instagram.com/masees.insta/" target="_blank" aria-label="View Instagram Post">
             <img class="insta-img"
               src="./assets/Hero-section/2024-08-15 (1).jpg"
               alt="Masee's Footwear Instagram">
           </a>
         </div>
         <div class="insta-item">
-          <a href="https://www.instagram.com/masees.amburshoes" target="_blank" aria-label="View Instagram Post">
+          <a href="https://www.instagram.com/masees.insta/" target="_blank" aria-label="View Instagram Post">
             <img class="insta-img"
               src="./assets/Hero-section/unnamed (1).jpg"
               alt="Masee's Footwear Instagram">
           </a>
         </div>
         <div class="insta-item">
-          <a href="https://www.instagram.com/masees.amburshoes" target="_blank" aria-label="View Instagram Post">
+          <a href="https://www.instagram.com/masees.insta/" target="_blank" aria-label="View Instagram Post">
             <img class="insta-img"
               src="./assets/Hero-section/2024-08-10 (1).jpg"
               alt="Masee's Footwear Instagram">
@@ -1730,7 +2091,7 @@
       </div>
       <div class="insta-nav insta-next">›</div>
     </div>
-    <div class="insta-footer-text">@masees.amburshoes</div>
+    <div class="insta-footer-text">@maseesfootwear</div>
   </section>
 
   <!-- STORES -->
@@ -1767,7 +2128,9 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo">Masee's <span>Footwear</span></a>
+        <a href="#" class="logo">
+          <img src="./assets/unnamed__1_-removebg-preview.png" alt="Masee's Footwear" style="height: 45px; width: auto; object-fit: contain; vertical-align: middle;">
+        </a>
         <p>Premier footwear destination in Ambur, Tamil Nadu. Genuine leather, handcrafted quality, and styles for every
           occasion.</p>
         <div class="footer-nap">
@@ -1780,7 +2143,7 @@
           <a href="https://www.facebook.com/masees.shop" class="social-icon" target="_blank" aria-label="Facebook">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
           </a>
-          <a href="https://www.instagram.com/masees.amburshoes" class="social-icon" target="_blank" aria-label="Instagram">
+          <a href="https://www.instagram.com/masees.insta/" class="social-icon" target="_blank" aria-label="Instagram">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069v-2.162zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
           <a href="https://wa.me/919500248077" class="social-icon" target="_blank" aria-label="WhatsApp">
@@ -1796,12 +2159,11 @@
         <a href="#categories">Men's Collection</a>
         <a href="#categories">Women's Collection</a>
         <a href="#categories">Kids' Collection</a>
-        <a href="#browse">Formal Shoes</a>
-        <a href="#browse">Sneakers</a>
-        <a href="#browse">Sandals</a>
+
       </div>
       <div class="footer-col">
         <h5>About</h5>
+        <a href="#about">About Us</a>
         <a href="#authority">Our Story</a>
         <a href="#authority">Ambur Leather</a>
         <a href="#why">Why Masee's</a>
