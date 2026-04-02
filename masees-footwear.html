@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masee's Footwear – Premium Shoe Store in Ambur</title>
+  <meta name="description"
+    content="Masee's Footwear – Premier leather shoe store in Ambur, Tamil Nadu. Genuine Ambur leather, handcrafted footwear for Men, Women & Kids. Visit us today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f1f38;
+      --navy-mid: #1a3058;
+      --navy-light: #243d6b;
+      --slate: #4a5568;
+      --slate-light: #718096;
+      --cream: #f9f6f1;
+      --white: #ffffff;
+      --gold: #c9a96e;
+      --gold-light: #e8d5b0;
+      --text-dark: #1a202c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(15, 31, 56, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      transition: all 0.3s;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      padding: 0.5rem 1.2rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.08em !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-light) !important;
+      color: var(--navy) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      display: block;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 85vh;
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201, 169, 110, 0.08) 0%, transparent 60%);
+    }
+
+    .hero-text {
+      padding: 6rem 5% 6rem 8%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      color: var(--white);
+      line-height: 1.08;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.15s both;
+    }
+
+    .hero-text h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-sub {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.85rem 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-visual {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.2s ease 0.3s both;
+    }
+
+    .hero-visual-bg {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(15, 31, 56, 0.3) 0%, transparent 50%);
+      transform: scale(1.05);
+      animation: slowZoom 12s ease-in-out infinite alternate;
+    }
+
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      background: linear-gradient(to right, var(--navy), transparent);
+      z-index: 2;
+    }
+
+    .hero-scroll-container {
+      position: absolute;
+      top: -15%;
+      right: -10%;
+      width: 120%;
+      height: 130%;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      transform: rotate(12deg);
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-scroll-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      flex: 1;
+      animation: scrollVert 35s linear infinite;
+      will-change: transform;
+    }
+
+    .hero-scroll-col.reverse {
+      animation: scrollVertRev 35s linear infinite;
+    }
+
+    .hero-scroll-item {
+      width: 100%;
+      height: 350px;
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes scrollVert {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(calc(-50% - 0.75rem));
+      }
+    }
+
+    @keyframes scrollVertRev {
+      0% {
+        transform: translateY(calc(-66.666% - 1rem));
+      }
+
+      100% {
+        transform: translateY(calc(-33.333% - 0.5rem));
+      }
+    }
+
+    .hero-stats {
+      position: absolute;
+      bottom: 4rem;
+      left: 3rem;
+      display: flex;
+      gap: 2rem;
+      z-index: 3;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+
+    .stat {
+      text-align: center;
+      background: rgba(15, 31, 56, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      padding: 1rem 1.5rem;
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      background: var(--gold);
+      padding: 0.7rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-inner {
+      display: inline-flex;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-item {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0 2.5rem;
+    }
+
+    .marquee-dot {
+      color: var(--navy);
+      opacity: 0.5;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 8%;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--slate);
+    }
+
+    /* ── CATEGORIES ── */
+    #categories {
+      background: var(--cream);
+      padding: 6rem 5%;
+    }
+
+    .cat-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cat-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      group: true;
+    }
+
+    .cat-img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .cat-card:hover .cat-img {
+      transform: scale(1.06);
+    }
+
+    .cat-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 31, 56, 0.85) 0%, rgba(15, 31, 56, 0.1) 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .cat-card:hover .cat-overlay {
+      background: linear-gradient(to top, rgba(15, 31, 56, 0.92) 0%, rgba(15, 31, 56, 0.3) 60%);
+    }
+
+    .cat-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .cat-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: white;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .cat-desc {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.82rem;
+      margin-top: 0.4rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s;
+    }
+
+    .cat-card:hover .cat-desc {
+      opacity: 1;
+      transform: none;
+    }
+
+    .cat-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s 0.05s;
+    }
+
+    .cat-card:hover .cat-link {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── LEATHER AUTHORITY ── */
+    #authority {
+      background: var(--navy);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    #authority .section-title {
+      color: white;
+    }
+
+    .authority-text p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .authority-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .auth-feat {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      transition: border-color 0.3s;
+    }
+
+    .auth-feat:hover {
+      border-color: rgba(201, 169, 110, 0.6);
+    }
+
+    .auth-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201, 169, 110, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .auth-feat-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: white;
+    }
+
+    .auth-feat-text span {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .authority-img {
+      position: relative;
+      height: 580px;
+    }
+
+    .auth-img-main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .auth-img-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: var(--gold);
+      padding: 1.5rem 2rem;
+      width: 180px;
+    }
+
+    .auth-img-badge .big-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .auth-img-badge .small-txt {
+      font-size: 0.7rem;
+      color: var(--navy);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ── CATEGORIES FILTER (types) ── */
+    #browse {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0 3rem;
+    }
+
+    .filter-tab {
+      padding: 0.5rem 1.3rem;
+      border: 1px solid #ddd;
+      background: none;
+      cursor: pointer;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .filter-tab.active,
+    .filter-tab:hover {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .type-card {
+      background: var(--cream);
+      padding: 1.5rem 0.5rem;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .type-card:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .type-card:hover .type-name {
+      color: var(--gold);
+    }
+
+    .type-card:hover .type-icon {
+      filter: brightness(10);
+    }
+
+    .type-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .type-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    /* ── WHY MASEE'S ── */
+    #why {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .why-card {
+      background: white;
+      padding: 2rem;
+      border-top: 3px solid var(--gold);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .why-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .why-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .why-card p {
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 3rem auto 0;
+      text-align: left;
+    }
+
+    .testi-card {
+      padding: 2rem;
+      border: 1px solid #e8e8e8;
+      position: relative;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .testi-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .testi-stars {
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .testi-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--slate);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .testi-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .testi-name {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--navy);
+    }
+
+    .testi-loc {
+      font-size: 0.72rem;
+      color: var(--slate-light);
+    }
+
+    .google-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-light);
+    }
+
+    /* ── STORE LOCATOR ── */
+    #stores {
+      background: var(--navy);
+      color: white;
+      padding: 6rem 8%;
+    }
+
+    #stores .section-title {
+      color: white;
+    }
+
+    .stores-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .store-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .store-card {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .store-card.active,
+    .store-card:hover {
+      border-color: var(--gold);
+      background: rgba(201, 169, 110, 0.07);
+    }
+
+    .store-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .store-info {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+    }
+
+    .store-info strong {
+      color: white;
+    }
+
+    .store-actions {
+      display: flex;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .store-btn {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .store-btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .store-btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    .store-btn:hover {
+      opacity: 0.85;
+    }
+
+    .store-map-area {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .map-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(20%) contrast(1.1);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080f1d;
+      color: rgba(255, 255, 255, 0.55);
+      padding: 4rem 8% 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .logo {
+      font-size: 1.4rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.45);
+      max-width: 260px;
+    }
+
+    .footer-nap {
+      margin-top: 1.2rem;
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-nap strong {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .footer-col h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.8rem;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .social-icon:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.73rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: transform 0.3s;
+      animation: pulse 2.5s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    /* ── INSTAGRAM ── */
+    #instagram-feed {
+      padding: 6rem 5%;
+      text-align: center;
+      background: var(--white);
+    }
+
+    #instagram-feed h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 2.5rem;
+    }
+
+    .insta-gallery-wrapper {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .insta-gallery {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .insta-gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .insta-item {
+      flex: 0 0 calc(20% - 12px);
+      min-width: 240px;
+      scroll-snap-align: start;
+    }
+
+    .insta-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .insta-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 2;
+      color: #333;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+      user-select: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .insta-nav:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .insta-prev {
+      left: 15px;
+    }
+
+    .insta-next {
+      right: 15px;
+    }
+
+    .insta-footer-text {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--slate);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slowZoom {
+      from {
+        transform: scale(1.05);
+      }
+
+      to {
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 4px 28px rgba(37, 211, 102, 0.7);
+      }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      #hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        padding: 5rem 6% 3rem;
+      }
+
+      .hero-visual {
+        height: 50vw;
+        min-height: 300px;
+      }
+
+      .hero-visual::after {
+        display: none;
+      }
+
+      .hero-stats {
+        left: 1.5rem;
+        bottom: 1.5rem;
+        gap: 0.8rem;
+      }
+
+      .stat {
+        padding: 0.7rem 1rem;
+      }
+
+      .cat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #authority {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .authority-img {
+        height: 350px;
+      }
+
+      .types-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      #why {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stores-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      nav .nav-links {
+        display: none;
+      }
+
+      nav .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 31, 56, 0.98);
+        padding: 2rem;
+        gap: 1.5rem;
+        z-index: 99;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      section {
+        padding: 4rem 6%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .types-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/919500248077" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 0C7.163 0 0 7.163 0 16c0 2.822.738 5.469 2.027 7.769L0 32l8.479-2.023A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.406 21.72c-.348.977-2.035 1.868-2.793 1.987-.711.112-1.611.16-2.598-.163-.598-.2-1.368-.468-2.35-.917-4.137-1.786-6.84-5.97-7.046-6.246-.207-.275-1.686-2.244-1.686-4.28 0-2.036 1.068-3.034 1.447-3.448.378-.414.826-.517 1.101-.517.276 0 .55.003.79.013.254.012.594-.097.93.71.347.829 1.18 2.865 1.283 3.072.103.206.172.448.034.724-.137.275-.206.448-.413.688-.207.24-.434.537-.62.72-.206.207-.42.43-.18.843.24.413 1.069 1.764 2.295 2.858 1.574 1.401 2.904 1.836 3.317 2.043.413.207.654.172.895-.104.24-.275 1.034-1.205 1.309-1.619.275-.413.55-.345.928-.207.378.138 2.399 1.132 2.812 1.338.413.207.688.31.79.482.103.172.103 1.001-.244 1.978z" />
+    </svg>
+  </a>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="logo">
+      <img src="./public/unnamed__1_-removebg-preview.png" alt="Masee's Footwear" style="height: 48px; width: auto; object-fit: contain; vertical-align: middle;">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#categories">Men</a></li>
+      <li><a href="#categories">Women</a></li>
+      <li><a href="#categories">Kids</a></li>
+      <li><a href="#browse">Collections</a></li>
+      <li><a href="#authority">Our Story</a></li>
+      <li><a href="#stores" class="nav-cta">Get Directions</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text">
+      <div class="hero-badge">Premium Shoe Store in Ambur</div>
+      <h1>Crafted for the<br><em>Way You Live</em></h1>
+      <p class="hero-sub">Masee's Footwear brings you the finest Ambur leather in styles built for modern life — from
+        the boardroom to the street.</p>
+      <div class="hero-btns">
+        <a href="https://maps.app.goo.gl/ykXyHoKMqWo8dhkS6" target="_blank" class="btn-primary">
+          📍 Get Directions
+        </a>
+        <a href="#categories" class="btn-secondary">Explore Collection</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-bg"></div>
+
+      <div class="hero-scroll-container">
+        <div class="hero-scroll-col">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2021-04-30.jpg"
+            alt="Men's Collection">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-10 (1).jpg"
+            alt="Women's Collection">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-10.jpg"
+            alt="Kids' Collection">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-15 (1).jpg"
+            alt="Ambur Leather">
+          <!-- Duplicated for seamless loop -->
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2021-04-30.jpg"
+            alt="Men's Collection">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-10 (1).jpg"
+            alt="Women's Collection">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-10.jpg"
+            alt="Kids' Collection">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-15 (1).jpg"
+            alt="Ambur Leather">
+        </div>
+        <div class="hero-scroll-col reverse">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/unnamed (1).jpg" alt="Sneakers">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/unnamed.jpg"
+            alt="Sports Shoes">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2021-04-30.jpg"
+            alt="Formal Shoes">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-10.jpg"
+            alt="Casual Shoes">
+          <!-- Set 2 -->
+          <img class="hero-scroll-item"
+            src="./public/Hero section/unnamed (1).jpg" alt="Sneakers">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/unnamed.jpg"
+            alt="Sports Shoes">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2021-04-30.jpg"
+            alt="Formal Shoes">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-10.jpg"
+            alt="Casual Shoes">
+          <!-- Set 3 -->
+          <img class="hero-scroll-item"
+            src="./public/Hero section/unnamed (1).jpg" alt="Sneakers">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/unnamed.jpg"
+            alt="Sports Shoes">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2021-04-30.jpg"
+            alt="Formal Shoes">
+          <img class="hero-scroll-item"
+            src="./public/Hero section/2024-08-10.jpg"
+            alt="Casual Shoes">
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Years in Ambur</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Styles</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.8★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARQUEE -->
+    <div class="marquee-bar">
+      <div class="marquee-inner">
+        <span class="marquee-item">Genuine Ambur Leather <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Men's Formal & Casual <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Women's Collection <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Kids' Footwear <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Handcrafted Quality <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">All-Day Comfort <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Durable Materials <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Genuine Ambur Leather <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Men's Formal & Casual <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Women's Collection <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Kids' Footwear <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Handcrafted Quality <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">All-Day Comfort <span class="marquee-dot">◆</span></span>
+        <span class="marquee-item">Durable Materials <span class="marquee-dot">◆</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories">
+    <div class="cat-header">
+      <div class="section-label">Shop by Category</div>
+      <h2 class="section-title">A Pair for <em>Every Step</em></h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <img class="cat-img"
+          src="./public/mens_category.png"
+          alt="Men's Footwear">
+        <div class="cat-overlay">
+          <div class="cat-tag">Bestsellers</div>
+          <div class="cat-name">Men</div>
+          <div class="cat-desc">Oxfords, Loafers, Derby, Boots & Sneakers</div>
+          <a href="#browse" class="cat-link">View Collection →</a>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img class="cat-img" src="./public/womens_category.png"
+          alt="Women's Footwear">
+        <div class="cat-overlay">
+          <div class="cat-tag">New Arrivals</div>
+          <div class="cat-name">Women</div>
+          <div class="cat-desc">Heels, Flats, Sandals & Casual</div>
+          <a href="#browse" class="cat-link">View Collection →</a>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img class="cat-img" src="./public/kids_category.png"
+          alt="Kids' Footwear">
+        <div class="cat-overlay">
+          <div class="cat-tag">Fun & Durable</div>
+          <div class="cat-name">Kids</div>
+          <div class="cat-desc">School Shoes, Sandals & Sports</div>
+          <a href="#browse" class="cat-link">View Collection →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEATHER AUTHORITY -->
+  <section id="authority">
+    <div class="authority-text">
+      <div class="section-label">Our Heritage</div>
+      <h2 class="section-title">The Leather<br><em>Capital of India</em></h2>
+      <p>Ambur has been the heartbeat of India's leather industry for generations. At Masee's, we source only authentic
+        Ambur leather — known worldwide for its strength, supple feel, and lasting character. Every pair in our store
+        carries that legacy.</p>
+      <div class="authority-features">
+        <div class="auth-feat">
+          <div class="auth-icon">🐂</div>
+          <div class="auth-feat-text">
+            <strong>Genuine Ambur Leather</strong>
+            <span>Sourced from trusted local tanneries with decades of expertise</span>
+          </div>
+        </div>
+        <div class="auth-feat">
+          <div class="auth-icon">🤲</div>
+          <div class="auth-feat-text">
+            <strong>Handcrafted Construction</strong>
+            <span>Each pair stitched with care by skilled Ambur craftsmen</span>
+          </div>
+        </div>
+        <div class="auth-feat">
+          <div class="auth-icon">☁️</div>
+          <div class="auth-feat-text">
+            <strong>All-Day Comfort</strong>
+            <span>Ergonomic designs that support you through every step</span>
+          </div>
+        </div>
+        <div class="auth-feat">
+          <div class="auth-icon">🌍</div>
+          <div class="auth-feat-text">
+            <strong>Globally Recognised Quality</strong>
+            <span>Ambur leather exported to over 40 countries worldwide</span>
+          </div>
+        </div>
+      </div>
+      <a href="#stores" class="btn-primary"
+        style="background: var(--gold); color: var(--navy); padding: 0.85rem 2rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; text-decoration: none;">Visit
+        Our Store</a>
+    </div>
+    <div class="authority-img">
+      <img class="auth-img-main"
+        src="./public/2024-08-10.jpg"
+        alt="Ambur leather craftsmanship">
+      <div class="auth-img-badge">
+        <div class="big-num">15+</div>
+        <div class="small-txt">Years of Trust in Ambur</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BROWSE BY TYPE -->
+  <section id="browse">
+    <div class="section-label">Explore Styles</div>
+    <h2 class="section-title">Browse by <em>Occasion</em></h2>
+    <div class="filter-tabs">
+      <button class="filter-tab active">All</button>
+      <button class="filter-tab">Men</button>
+      <button class="filter-tab">Women</button>
+      <button class="filter-tab">Kids</button>
+    </div>
+    <div class="types-grid">
+      <div class="type-card"><span class="type-icon">👞</span>
+        <div class="type-name">Formal</div>
+      </div>
+      <div class="type-card"><span class="type-icon">👟</span>
+        <div class="type-name">Sneakers</div>
+      </div>
+      <div class="type-card"><span class="type-icon">🥾</span>
+        <div class="type-name">Boots</div>
+      </div>
+      <div class="type-card"><span class="type-icon">👡</span>
+        <div class="type-name">Heels</div>
+      </div>
+      <div class="type-card"><span class="type-icon">🩴</span>
+        <div class="type-name">Sandals</div>
+      </div>
+      <div class="type-card"><span class="type-icon">🏃</span>
+        <div class="type-name">Sports</div>
+      </div>
+    </div>
+    <p
+      style="text-align:center; color: var(--slate-light); font-size: 0.82rem; margin-top: 2.5rem; letter-spacing: 0.06em;">
+      Visit our store to explore the full range · New arrivals every season</p>
+  </section>
+
+  <!-- WHY MASEE'S -->
+  <section id="why">
+    <div>
+      <div class="section-label">Why Us</div>
+      <h2 class="section-title">The<br>Masee's<br><em>Promise</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <h4>Modern, Minimalist Design</h4>
+        <p>Clean lines and timeless silhouettes that stay stylish season after season.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧪</div>
+        <h4>Quality You Can Feel</h4>
+        <p>Every pair is inspected before it reaches the shelf — no compromise on material or build.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h4>Fair Pricing</h4>
+        <p>Premium Ambur leather at prices that make sense for everyday families.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h4>Expert Fitting</h4>
+        <p>Our staff are trained to find your perfect fit — not just a sale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-label">Customer Reviews</div>
+    <h2 class="section-title">What Ambur <em>Says About Us</em></h2>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="google-badge">Google Review</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Best shoe store in Ambur, hands down. The leather quality is excellent and the staff
+          helped me find the right size without any pressure. Been coming here for 3 years."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Riyaz Ahmed</div>
+            <div class="testi-loc">Ambur, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="google-badge">Google Review</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Bought formal shoes for my son's wedding. Incredible quality for the price. The leather
+          feels premium and the stitching is very clean. Highly recommend."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">F</div>
+          <div>
+            <div class="testi-name">Farida Begum</div>
+            <div class="testi-loc">Vellore, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="google-badge">Google Review</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Genuine Ambur leather at a great price. My sandals are 2 years old and still going
+          strong. Nothing else compares when it comes to local footwear."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">K</div>
+          <div>
+            <div class="testi-name">Karthik S.</div>
+            <div class="testi-loc">Ambur, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM FEED -->
+  <section id="instagram-feed">
+    <h2>Follow us on Instagram @masees.amburshoes</h2>
+    <div class="insta-gallery-wrapper">
+      <div class="insta-nav insta-prev">‹</div>
+      <div class="insta-gallery" id="instaGallery">
+        <div class="insta-item">
+          <img class="insta-img"
+            src="./public/2021-04-30.jpg"
+            alt="Shoes">
+        </div>
+        <div class="insta-item">
+          <img class="insta-img"
+            src="./public/2023-06-15.jpg"
+            alt="Shoes">
+        </div>
+        <div class="insta-item">
+          <img class="insta-img"
+            src="./public/2024-08-10.jpg" alt="Shoes">
+        </div>
+        <div class="insta-item">
+          <img class="insta-img"
+            src="./public/4.jpg"
+            alt="Shoes">
+        </div>
+        <div class="insta-item">
+          <img class="insta-img"
+            src="./public/2025-04-13.jpg"
+            alt="Shoes">
+        </div>
+        <div class="insta-item">
+          <img class="insta-img"
+            src="./public/unnamed (1).jpg"
+            alt="Shoes">
+        </div>
+      </div>
+      <div class="insta-nav insta-next">›</div>
+    </div>
+    <div class="insta-footer-text">@masees.amburshoes</div>
+  </section>
+
+  <!-- STORES -->
+  <section id="stores">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Visit <em>Masee's</em> Footwear</h2>
+    <div class="stores-layout">
+      <div class="store-cards">
+        <div class="store-card active">
+          <div class="store-name">M Masee's Footwear & Accessories</div>
+          <div class="store-info">
+            <strong>📍 Address:</strong><br>
+            19, Nethaji Road, Ambur - 635 802.<br><br>
+            <strong>🕘 Hours:</strong> Mon – Sun · 10:00 AM – 9:30 PM<br>
+            <strong>📞 Phone / WhatsApp:</strong> +91 95002 48077
+          </div>
+          <div class="store-actions">
+            <a href="https://maps.app.goo.gl/ykXyHoKMqWo8dhkS6" target="_blank" class="store-btn store-btn-primary">Get
+              Directions</a>
+            <a href="tel:+919500248077" class="store-btn store-btn-secondary">Call Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="store-map-area">
+        <iframe class="map-iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31354.21!2d78.71!3d12.79!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac4a5a2f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sAmbur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1680000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Masee's Footwear Location"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Masee's <span>Footwear</span></a>
+        <p>Premier footwear destination in Ambur, Tamil Nadu. Genuine leather, handcrafted quality, and styles for every
+          occasion.</p>
+        <div class="footer-nap">
+          <strong>M Masee's Footwear & Accessories</strong><br>
+          19, Nethaji Road, Ambur - 635 802.<br>
+          📞 +91 95002 48077<br>
+          ✉️ masees.info@gmail.com
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/masees.shop" class="social-icon" target="_blank">f</a>
+          <a href="https://www.instagram.com/masees.amburshoes" class="social-icon" target="_blank">ig</a>
+          <a href="https://wa.me/919500248077" class="social-icon" target="_blank">W</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <a href="#categories">Men's Collection</a>
+        <a href="#categories">Women's Collection</a>
+        <a href="#categories">Kids' Collection</a>
+        <a href="#browse">Formal Shoes</a>
+        <a href="#browse">Sneakers</a>
+        <a href="#browse">Sandals</a>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <a href="#authority">Our Story</a>
+        <a href="#authority">Ambur Leather</a>
+        <a href="#why">Why Masee's</a>
+        <a href="#testimonials">Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h5>Visit Us</h5>
+        <a href="#stores">Store Locations</a>
+        <a href="https://maps.app.goo.gl/ykXyHoKMqWo8dhkS6" target="_blank">Google Maps</a>
+        <a href="tel:+919500248077">Call Us</a>
+        <a href="https://wa.me/919500248077" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Masee's Footwear, Ambur. All rights reserved.</span>
+      <span>Ambur, Tamil Nadu · Premier Shoe Store</span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 60) {
+        nav.style.borderBottomColor = 'rgba(201,169,110,0.35)';
+      } else {
+        nav.style.borderBottomColor = 'rgba(201,169,110,0.2)';
+      }
+    });
+
+    // Filter tabs
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+
+    // Store card active state
+    document.querySelectorAll('.store-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.store-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.why-card, .testi-card, .auth-feat, .type-card, .insta-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Instagram scroll
+    const instaGallery = document.getElementById('instaGallery');
+    const instaPrev = document.querySelector('.insta-prev');
+    const instaNext = document.querySelector('.insta-next');
+    if (instaGallery && instaPrev && instaNext) {
+      const scrollAmount = 260;
+      instaPrev.addEventListener('click', () => {
+        instaGallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+      instaNext.addEventListener('click', () => {
+        instaGallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+
+</html>
