@@ -34,6 +34,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
     html {
@@ -1386,7 +1387,22 @@
       }
 
       .hero-visual {
-        height: 70vh;
+        height: 85vh;
+        background: var(--navy);
+      }
+
+      .hero-scroll-container {
+        width: 120%;
+        right: -10%;
+        top: -5%;
+        height: 110%;
+        transform: rotate(6deg);
+        opacity: 0.55;
+      }
+
+      .hero-scroll-col {
+        gap: 0.8rem;
+        animation-duration: 25s;
       }
 
       .hero-visual::after {
@@ -1394,9 +1410,12 @@
       }
 
       .hero-stats {
-        left: 1.5rem;
-        bottom: 1.5rem;
-        gap: 0.8rem;
+        left: 5%;
+        bottom: 2rem;
+        width: 90%;
+        gap: 0.6rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .stat {
